@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Velkommen, {{ full_name }}!</h1>
+        <form id="order-form">
+            <label for="description">Oversettelse av bok:</label>
+            <textarea id="description" name="description" required></textarea>
+            <button type="submit">Send bestilling</button>
+        </form>
+        <a href="/logout" class="button">Logg ut</a>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

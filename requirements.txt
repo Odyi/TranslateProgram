@@ -1,0 +1,6 @@
+man kjører prosjektet sånn her:
+Sørg for at Python og Flask er installert:
+"pip install flask"
+Start appen:
+"python app.py"
+Åpne nettleseren og gå til http://127.0.0.1:5000.

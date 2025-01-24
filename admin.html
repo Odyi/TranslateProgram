@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin-grensesnitt</h1>
+        
+        <h2>Registrerte brukere</h2>
+        <ul>
+            {% for user in users %}
+                <li>{{ user.full_name }} ({{ user.email }})</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Bestillinger</h2>
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    {{ job.description }} 
+                    ({{ job.timestamp.strftime('%Y-%m-%d %H:%M:%S') }})
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

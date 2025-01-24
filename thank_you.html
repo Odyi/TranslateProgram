@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takk for bestillingen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Takk for bestillingen!</h1>
+        <p>Vi har mottatt din bestilling og vil behandle den så snart som mulig.</p>
+        
+        <h2>Din bestillingshistorikk</h2>
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    {{ job.description }} 
+                    ({{ job.timestamp.strftime('%Y-%m-%d %H:%M:%S') }})
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="/dashboard" class="button">Gå tilbake til bestillingssiden</a>
+    </div>
+</body>
+</html>
